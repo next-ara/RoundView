@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 圆角线性布局 -->
+    <declare-styleable name="RoundView">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+</resources>
