@@ -3,7 +3,6 @@ package com.next.view.round;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,9 +20,6 @@ public class RoundRecyclerView extends RecyclerView {
     //圆角半径
     private float radius = 0;
 
-    //最大高度
-    private int maxHeight;
-
     public RoundRecyclerView(@NonNull Context context) {
         super(context);
     }
@@ -40,15 +36,6 @@ public class RoundRecyclerView extends RecyclerView {
         this.init(context, attrs);
     }
 
-    @Override
-    protected void onMeasure(int widthSpec, int heightSpec) {
-        if (this.maxHeight != 0) {
-            super.onMeasure(widthSpec, View.MeasureSpec.makeMeasureSpec(this.maxHeight, View.MeasureSpec.AT_MOST));
-        } else {
-            super.onMeasure(widthSpec, heightSpec);
-        }
-    }
-
     /**
      * 初始化
      *
@@ -62,15 +49,6 @@ public class RoundRecyclerView extends RecyclerView {
 
         //设置圆角半径
         this.setRadius(radius);
-    }
-
-    /**
-     * 设置最大高度
-     *
-     * @param maxHeight 最大高度
-     */
-    public void setMaxHeight(int maxHeight) {
-        this.maxHeight = maxHeight;
     }
 
     /**

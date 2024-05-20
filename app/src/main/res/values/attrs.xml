@@ -3,6 +3,5 @@
     <!-- 圆角控件 -->
     <declare-styleable name="RoundView">
         <attr name="radius" format="dimension" />
-        <attr name="recyclerViewId" format="reference" />
     </declare-styleable>
 </resources>
