@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 圆角线性布局 -->
+    <!-- 圆角控件 -->
     <declare-styleable name="RoundView">
         <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <!-- 阻尼反弹嵌套滚动控件 -->
+    <declare-styleable name="DampingReboundNestedScrollView">
+        <attr name="radius" format="dimension" />
+        <attr name="recyclerViewId" format="reference" />
     </declare-styleable>
 </resources>
