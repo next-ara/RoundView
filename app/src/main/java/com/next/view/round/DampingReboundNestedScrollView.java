@@ -202,9 +202,9 @@ public class DampingReboundNestedScrollView extends NestedScrollView {
      * @param attrs   属性
      */
     private void init(Context context, AttributeSet attrs) {
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.DampingReboundNestedScrollView);
-        float radius = ta.getDimension(R.styleable.DampingReboundNestedScrollView_radius, 0);
-        this.recyclerViewId = ta.getResourceId(R.styleable.DampingReboundNestedScrollView_recyclerViewId, 0);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.RoundView);
+        float radius = ta.getDimension(R.styleable.RoundView_radius, 0);
+        this.recyclerViewId = ta.getResourceId(R.styleable.RoundView_recyclerViewId, 0);
         ta.recycle();
 
         //设置圆角半径
