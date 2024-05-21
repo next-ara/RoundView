@@ -15,7 +15,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.next.view.round'
                 artifactId = 'RoundView'
-                version = "1.0.1"
+                version = "1.0.2"
             }
         }
     }
@@ -44,6 +44,9 @@ android {
 }
 
 dependencies {
+    //回弹布局
+    implementation 'com.github.next-ara:SpringBackLayout:1.0.0'
+
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
 }
