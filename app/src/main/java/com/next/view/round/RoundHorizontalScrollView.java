@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
- * ClassName:圆角横向滑动布局类
+ * ClassName:圆角横向滚动布局类
  *
  * @author Afton
  * @time 2024/1/5

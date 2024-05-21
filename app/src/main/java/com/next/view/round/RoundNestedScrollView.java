@@ -3,34 +3,34 @@ package com.next.view.round;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.widget.ScrollView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 
 /**
- * ClassName:圆角纵向滚动布局类
+ * ClassName:圆角纵向嵌套滚动布局类
  *
  * @author Afton
  * @time 2024/1/5
  * @auditor
  */
-public class RoundScrollView extends ScrollView {
+public class RoundNestedScrollView extends NestedScrollView {
 
     //圆角半径
     private float radius = 0;
 
-    public RoundScrollView(@NonNull Context context) {
+    public RoundNestedScrollView(@NonNull Context context) {
         super(context);
     }
 
-    public RoundScrollView(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public RoundNestedScrollView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         //初始化
         this.init(context, attrs);
     }
 
-    public RoundScrollView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public RoundNestedScrollView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         //初始化
         this.init(context, attrs);
