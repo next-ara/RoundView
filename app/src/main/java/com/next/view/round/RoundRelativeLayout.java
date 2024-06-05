@@ -19,6 +19,9 @@ public class RoundRelativeLayout extends RelativeLayout {
     //圆角半径
     private float radius = 0;
 
+    //是否开启圆角半径偏移量
+    private boolean isOffset = true;
+
     public RoundRelativeLayout(Context context) {
         super(context);
     }
@@ -49,11 +52,12 @@ public class RoundRelativeLayout extends RelativeLayout {
      */
     private void init(Context context, AttributeSet attrs) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.RoundView);
-        float radius = ta.getDimension(R.styleable.RoundView_radius, 0);
+        this.radius = ta.getDimension(R.styleable.RoundView_radius, 0);
+        this.isOffset = ta.getBoolean(R.styleable.RoundView_isOffset, true);
         ta.recycle();
 
-        //设置圆角半径
-        this.setRadius(radius);
+        //更新圆角半径
+        this.updateRadius();
     }
 
     /**
@@ -62,17 +66,36 @@ public class RoundRelativeLayout extends RelativeLayout {
      * @param radius 圆角半径
      */
     public void setRadius(float radius) {
-        if (this.radius == radius) {
-            return;
-        }
+        this.radius = radius;
+        //更新圆角半径
+        this.updateRadius();
+    }
 
-        RoundOutlineProvider roundOutlineProvider = new RoundOutlineProvider(radius);
+    /**
+     * 设置是否开启圆角半径偏移量
+     *
+     * @param isOffset 是否开启
+     */
+    public void setOffset(boolean isOffset) {
+        this.isOffset = isOffset;
+        //更新圆角半径
+        this.updateRadius();
+    }
+
+    /**
+     * 更新圆角半径
+     */
+    private void updateRadius() {
+        RoundOutlineProvider roundOutlineProvider = new RoundOutlineProvider(this.radius, this.isOffset);
         this.setOutlineProvider(roundOutlineProvider);
         this.setClipToOutline(true);
-        this.radius = radius;
     }
 
     public float getRadius() {
         return radius;
+    }
+
+    public boolean isOffset() {
+        return isOffset;
     }
 }

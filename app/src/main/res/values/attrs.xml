@@ -3,5 +3,6 @@
     <!-- 圆角控件 -->
     <declare-styleable name="RoundView">
         <attr name="radius" format="dimension" />
+        <attr name="isOffset" format="boolean" />
     </declare-styleable>
 </resources>

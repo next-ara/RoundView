@@ -16,10 +16,10 @@ import android.view.ViewOutlineProvider;
 public class RoundOutlineProvider extends ViewOutlineProvider {
 
     //圆角半径
-    private float radius = 0;
+    private float radius;
 
-    public RoundOutlineProvider(float radius) {
-        this.radius = radius + RoundConfig.getInstance().getRoundOffset();
+    public RoundOutlineProvider(float radius, boolean isOffset) {
+        this.radius = isOffset ? radius + RoundConfig.getInstance().getRoundOffset() : radius;
     }
 
     @Override
