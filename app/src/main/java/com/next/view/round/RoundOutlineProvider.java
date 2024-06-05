@@ -38,8 +38,11 @@ public class RoundOutlineProvider extends ViewOutlineProvider {
 
     /**
      * 设置圆角半径
+     *
+     * @param radius   圆角半径
+     * @param isOffset 是否开启圆角半径偏移量
      */
-    public void setRadius(float radius, boolean isOffset) {
+    private void setRadius(float radius, boolean isOffset) {
         this.radius = isOffset ? radius + RoundConfig.getInstance().getRoundOffset() : radius;
     }
 
