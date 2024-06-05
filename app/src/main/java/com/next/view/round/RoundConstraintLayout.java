@@ -3,6 +3,7 @@ package com.next.view.round;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.ViewOutlineProvider;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -81,7 +82,16 @@ public class RoundConstraintLayout extends ConstraintLayout {
      * 更新圆角半径
      */
     private void updateRadius() {
-        RoundOutlineProvider roundOutlineProvider = new RoundOutlineProvider(this.radius, this.isOffset);
+        ViewOutlineProvider viewOutlineProvider = this.getOutlineProvider();
+        RoundOutlineProvider roundOutlineProvider;
+
+        if (viewOutlineProvider instanceof RoundOutlineProvider) {
+            roundOutlineProvider = (RoundOutlineProvider) viewOutlineProvider;
+            roundOutlineProvider.setRadius(this.radius, this.isOffset);
+        } else {
+            roundOutlineProvider = new RoundOutlineProvider(this.radius, this.isOffset);
+        }
+
         this.setOutlineProvider(roundOutlineProvider);
         this.setClipToOutline(true);
     }

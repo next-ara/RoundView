@@ -19,7 +19,8 @@ public class RoundOutlineProvider extends ViewOutlineProvider {
     private float radius;
 
     public RoundOutlineProvider(float radius, boolean isOffset) {
-        this.radius = isOffset ? radius + RoundConfig.getInstance().getRoundOffset() : radius;
+        //设置圆角半径
+        this.setRadius(radius, isOffset);
     }
 
     @Override
@@ -33,6 +34,13 @@ public class RoundOutlineProvider extends ViewOutlineProvider {
         } else {
             outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), radius);
         }
+    }
+
+    /**
+     * 设置圆角半径
+     */
+    public void setRadius(float radius, boolean isOffset) {
+        this.radius = isOffset ? radius + RoundConfig.getInstance().getRoundOffset() : radius;
     }
 
     /**
